@@ -10,7 +10,7 @@ import NewEntryScreen from "./src/components/NewEntry";
 
 const Stack = createStackNavigator();
 
-function App() {
+function App({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -20,8 +20,8 @@ function App() {
           options={{
             headerTitle: "Diary",
             headerStyle: {
-              backgroundColor: '#dfcffa',
-            },
+              backgroundColor: "#dfcffa",
+            }
           }}
         />
         <Stack.Screen
@@ -30,7 +30,7 @@ function App() {
           options={{
             headerTitle: "Diary",
             headerStyle: {
-              backgroundColor: '#dfcffa',
+              backgroundColor: "#dfcffa",
             },
           }}
         />
@@ -41,10 +41,10 @@ function App() {
 
 const styles = StyleSheet.create({
   save_btn: {
-    margin:25,
+    margin: 25,
     fontSize: 14,
-    fontWeight: "bold"
-  }
-})
+    fontWeight: "bold",
+  },
+});
 
 export default App;

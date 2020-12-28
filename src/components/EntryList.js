@@ -59,7 +59,8 @@ export default function EntryListScreen({
               padding: 10,
               elevation: 5,
               marginVertical: 5,
-              color: 'white'
+              color: "white",
+              borderRadius: 5
             }}
           >
             {monthNames[m] + " " + year}
@@ -102,16 +103,20 @@ export default function EntryListScreen({
             >
               <View style={{ paddingRight: 60, justifyContent: "center" }}>
                 <Text style={{ fontSize: 24, paddingBottom: 1 }}>
-                  {new Date(item.timestamp).getDate()}
+                  {new Date(item.timestamp).getDate() < 10
+                    ? "0" + new Date(item.timestamp).getDate()
+                    : new Date(item.timestamp).getDate()}
                 </Text>
                 <Text style={{ fontSize: 14, paddingBottom: 10 }}>
                   {dayNames[new Date(item.timestamp).getDay()]}
                 </Text>
               </View>
               <View style={{ justifyContent: "center" }}>
-                <Text style={styles.title}>{item.title && item.title.length > 10
+                <Text style={styles.title}>
+                  {item.title && item.title.length > 10
                     ? item.title.substring(0, 10) + "..."
-                    : item.title}</Text>
+                    : item.title}
+                </Text>
                 <Text style={styles.desc}>
                   {item.content && item.content.length > 30
                     ? item.content.substring(0, 30) + "..."
@@ -166,7 +171,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#ece4fb",
     padding: 14,
     marginVertical: 5,
-    elevation: 5
+    elevation: 5,
+    borderRadius: 5
   },
   title: {
     fontSize: 20,
@@ -180,6 +186,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2eaff",
     padding: 30,
     marginVertical: 5,
-    elevation: 2
+    elevation: 2,
   },
 });

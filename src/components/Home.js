@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   floating_btn: {
     borderWidth: 1,
-    borderColor: "#b992fa",
+    borderColor: "#575757",
     alignItems: "center",
     justifyContent: "center",
     width: 65,
