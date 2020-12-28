@@ -25,15 +25,7 @@ function App() {
           name="Entry"
           component={NewEntryScreen}
           options={{
-            headerTitle: "Diary",
-            // headerRight: () => (
-            //   <TouchableOpacity
-            //     style={styles.save_btn}
-            //     onPress={()=>alert('clicked')}
-            //   >
-            //     <Text style={styles.save_btn}>SAVE</Text>
-            //   </TouchableOpacity>
-            // ),
+            headerTitle: "Diary"
           }}
         />
       </Stack.Navigator>

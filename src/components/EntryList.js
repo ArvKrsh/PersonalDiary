@@ -75,13 +75,23 @@ export default function EntryListScreen({
               />
             </View>
           )}
+          renderRightActions={() => (
+            <View style={styles.item_del}>
+              <MaterialIcons
+                name="edit"
+                size={28}
+                color="black"
+                style={{ marginBottom: 30 }}
+                onPress={() => editFunc(item)}
+              />
+            </View>
+          )}
           overshootLeft={false}
+          overshootRight={false}
+          overshootFriction={8}
           style={{ backgroundColor: "red" }}
         >
-          <View
-            style={styles.item}
-            onStartShouldSetResponder={() => editFunc(item)}
-          >
+          <View style={styles.item}>
             <View
               style={{
                 flexDirection: "row",
@@ -105,16 +115,6 @@ export default function EntryListScreen({
                     : item.content}
                 </Text>
               </View>
-              {/* <View style={{justifyContent: "center", paddingVertical: 5}}>
-              
-
-              <Entypo
-                name="edit"
-                size={24}
-                color="grey"
-                onPress={() => editFunc(item)}
-              />
-            </View> */}
             </View>
           </View>
         </Swipeable>
@@ -129,7 +129,7 @@ export default function EntryListScreen({
   return (
     <SafeAreaView style={styles.container_main}>
       {/* {console.log(entries.length)} */}
-      {entries.length > 0 && (
+      {entries && entries.length > 0 && (
         <View>
           <FlatList
             data={entries}
@@ -138,7 +138,7 @@ export default function EntryListScreen({
           />
         </View>
       )}
-      {entries.length <= 0 && (
+      {entries && entries.length <= 0 && (
         <View style={{ alignItems: "center", marginTop: 20 }}>
           <Text style={{ fontSize: 18, color: "black" }}>
             Click + to add entry
