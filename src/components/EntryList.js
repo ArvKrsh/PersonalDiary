@@ -54,10 +54,12 @@ export default function EntryListScreen({
         {divideEntry && (
           <Text
             style={{
-              marginVertical: 10,
               fontSize: 16,
-              backgroundColor: "#e9e4f3",
+              backgroundColor: "#b992fa",
               padding: 10,
+              elevation: 5,
+              marginVertical: 5,
+              color: 'white'
             }}
           >
             {monthNames[m] + " " + year}
@@ -89,7 +91,6 @@ export default function EntryListScreen({
           overshootLeft={false}
           overshootRight={false}
           overshootFriction={8}
-          style={{ backgroundColor: "red" }}
         >
           <View style={styles.item}>
             <View
@@ -108,7 +109,9 @@ export default function EntryListScreen({
                 </Text>
               </View>
               <View style={{ justifyContent: "center" }}>
-                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.title}>{item.title && item.title.length > 10
+                    ? item.title.substring(0, 10) + "..."
+                    : item.title}</Text>
                 <Text style={styles.desc}>
                   {item.content && item.content.length > 30
                     ? item.content.substring(0, 30) + "..."
@@ -128,7 +131,6 @@ export default function EntryListScreen({
 
   return (
     <SafeAreaView style={styles.container_main}>
-      {/* {console.log(entries.length)} */}
       {entries && entries.length > 0 && (
         <View>
           <FlatList
@@ -154,16 +156,17 @@ export default function EntryListScreen({
 const styles = StyleSheet.create({
   container_main: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#dfcffa",
     alignItems: "stretch",
     justifyContent: "flex-start",
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
   item: {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "#ece4fb",
     padding: 14,
-    marginVertical: 8,
+    marginVertical: 5,
+    elevation: 5
   },
   title: {
     fontSize: 20,
@@ -176,6 +179,7 @@ const styles = StyleSheet.create({
   item_del: {
     backgroundColor: "white",
     padding: 30,
-    marginVertical: 8,
+    marginVertical: 5,
+    elevation: 2
   },
 });
