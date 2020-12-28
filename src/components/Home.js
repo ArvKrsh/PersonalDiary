@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Button, TouchableOpacity, Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import EntryListScreen from "./EntryList";
 import { saveEntry, readEntriesList, getData, deleteEntry, editEntry } from "../util/EntryUtil";
@@ -9,9 +9,22 @@ export default function HomeScreen({ navigation }) {
   const [entries, onChangeEntries] = useState([]);
 
   function del(id) {
-    deleteEntry(id).then(()=> {
-      fetchData();
-    })
+    Alert.alert(
+      'Delete entry',
+      'Are you sure you want to delete this entry?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel'
+        },
+        { text: 'OK', onPress: () => deleteEntry(id).then(()=> {
+          fetchData();
+        })}
+      ],
+      { cancelable: false }
+    );
+    
   }
 
   function edit(entry) {

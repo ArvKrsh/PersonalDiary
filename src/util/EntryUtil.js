@@ -3,8 +3,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export const getData = async () => {
   try {
     const value = await AsyncStorage.getItem("diary_entries");
-    //console.log(JSON.parse(value))
-    return value!=null ? JSON.parse(value) : null;
+    var valueArr = JSON.parse(value)
+    valueArr.sort((a,b)=> new Date(a.timestamp) < new Date(b.timestamp))
+    console.log(valueArr)
+    return value!=null ? valueArr : null;
   } catch (e) {
     // error reading value
     console.log("error in reading: " + e);
