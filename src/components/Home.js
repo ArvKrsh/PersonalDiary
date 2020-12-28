@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   floating_btn: {
     borderWidth: 1,
-    borderColor: "#575757",
+    borderColor: "#b992fa",
     alignItems: "center",
     justifyContent: "center",
     width: 65,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
     height: 65,
-    backgroundColor: "#575757",
+    backgroundColor: "#b992fa",
     borderRadius: 100,
   },
   floating_btn_txt: { fontSize: 42, color: "#fff", marginTop:-5},

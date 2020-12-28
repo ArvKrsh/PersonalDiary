@@ -19,13 +19,19 @@ function App() {
           component={HomeScreen}
           options={{
             headerTitle: "Diary",
+            headerStyle: {
+              backgroundColor: '#dfcffa',
+            },
           }}
         />
         <Stack.Screen
           name="Entry"
           component={NewEntryScreen}
           options={{
-            headerTitle: "Diary"
+            headerTitle: "Diary",
+            headerStyle: {
+              backgroundColor: '#dfcffa',
+            },
           }}
         />
       </Stack.Navigator>

@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   item_del: {
-    backgroundColor: "white",
+    backgroundColor: "#f2eaff",
     padding: 30,
     marginVertical: 5,
     elevation: 2
