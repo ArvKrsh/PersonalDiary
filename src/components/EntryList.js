@@ -74,7 +74,7 @@ export default function EntryListScreen({
                 size={28}
                 color="red"
                 style={{ marginBottom: 30 }}
-                onPress={() => delFunc(item.id)}
+                onPress={()=>delFunc(item.id)}
               />
             </View>
           )}
@@ -85,13 +85,14 @@ export default function EntryListScreen({
                 size={28}
                 color="black"
                 style={{ marginBottom: 30 }}
-                onPress={() => editFunc(item)}
+                onPress={()=>editFunc(item)}
               />
             </View>
           )}
-          overshootLeft={false}
-          overshootRight={false}
-          overshootFriction={8}
+          onSwipeableLeftOpen={()=> delFunc(item.id)}
+          onSwipeableRightOpen={()=> editFunc(item)}
+          // overshootFriction={8}
+          friction= {2}
         >
           <View style={styles.item}>
             <View

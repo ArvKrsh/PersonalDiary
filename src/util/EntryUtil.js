@@ -4,7 +4,9 @@ export const getData = async () => {
   try {
     const value = await AsyncStorage.getItem("diary_entries");
     var valueArr = JSON.parse(value)
-    valueArr.sort((a,b)=> new Date(a.timestamp) < new Date(b.timestamp))
+    if(valueArr!=null) {
+      valueArr.sort((a,b)=> new Date(a.timestamp) < new Date(b.timestamp))
+    }
     console.log(valueArr)
     return value!=null ? valueArr : null;
   } catch (e) {
