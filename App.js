@@ -20,8 +20,10 @@ function App({navigation}) {
           options={{
             headerTitle: "Diary",
             headerStyle: {
-              backgroundColor: "#dfcffa",
-            }
+              //backgroundColor: "#dfcffa",
+              backgroundColor:'#000000',
+            },
+            headerTintColor: '#fff',
           }}
         />
         <Stack.Screen
@@ -30,8 +32,10 @@ function App({navigation}) {
           options={{
             headerTitle: "Diary",
             headerStyle: {
-              backgroundColor: "#dfcffa",
+              //backgroundColor: "#dfcffa",
+              backgroundColor:'#000000'
             },
+            headerTintColor: '#fff',
           }}
         />
       </Stack.Navigator>

@@ -55,7 +55,7 @@ export default function EntryListScreen({
           <Text
             style={{
               fontSize: 16,
-              backgroundColor: "#b992fa",
+              backgroundColor: "#ff0073",
               padding: 10,
               elevation: 5,
               marginVertical: 5,
@@ -83,7 +83,7 @@ export default function EntryListScreen({
               <MaterialIcons
                 name="edit"
                 size={28}
-                color="black"
+                color="white"
                 style={{ marginBottom: 30 }}
                 onPress={()=>editFunc(item)}
               />
@@ -103,19 +103,19 @@ export default function EntryListScreen({
               }}
             >
               <View style={{ paddingRight: 60, justifyContent: "center" }}>
-                <Text style={{ fontSize: 24, paddingBottom: 1 }}>
+                <Text style={{ fontSize: 24, paddingBottom: 1, color: 'black' }}>
                   {new Date(item.timestamp).getDate() < 10
                     ? "0" + new Date(item.timestamp).getDate()
                     : new Date(item.timestamp).getDate()}
                 </Text>
-                <Text style={{ fontSize: 14, paddingBottom: 10 }}>
+                <Text style={{ fontSize: 14, paddingBottom: 10, color: 'black' }}>
                   {dayNames[new Date(item.timestamp).getDay()]}
                 </Text>
               </View>
               <View style={{ justifyContent: "center" }}>
                 <Text style={styles.title}>
-                  {item.title && item.title.length > 10
-                    ? item.title.substring(0, 10) + "..."
+                  {item.title && item.title.length > 20
+                    ? item.title.substring(0, 20) + "..."
                     : item.title}
                 </Text>
                 <Text style={styles.desc}>
@@ -146,9 +146,9 @@ export default function EntryListScreen({
           />
         </View>
       )}
-      {entries && entries.length <= 0 && (
+      {!entries && (
         <View style={{ alignItems: "center", marginTop: 20 }}>
-          <Text style={{ fontSize: 18, color: "black" }}>
+          <Text style={{ fontSize: 18, color: "white" }}>
             Click + to add entry
           </Text>
         </View>
@@ -162,16 +162,16 @@ export default function EntryListScreen({
 const styles = StyleSheet.create({
   container_main: {
     flex: 1,
-    backgroundColor: "#dfcffa",
+    backgroundColor: "#000000",
     alignItems: "stretch",
     justifyContent: "flex-start",
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
   item: {
-    backgroundColor: "#ece4fb",
+    backgroundColor: "#f2f2f2",
     padding: 14,
-    marginVertical: 5,
+    marginVertical: 10,
     elevation: 5,
     borderRadius: 5
   },
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   item_del: {
-    backgroundColor: "#f2eaff",
+    backgroundColor: "#000000",
     padding: 30,
     marginVertical: 5,
     elevation: 2,

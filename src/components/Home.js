@@ -62,11 +62,11 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "black",
   },
   floating_btn: {
     borderWidth: 1,
-    borderColor: "#b992fa",
+    borderColor: "#ff0073",
     alignItems: "center",
     justifyContent: "center",
     width: 65,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
     height: 65,
-    backgroundColor: "#b992fa",
+    backgroundColor: "#ff0073",
     borderRadius: 100,
   },
   floating_btn_txt: { fontSize: 42, color: "#fff", marginTop:-5},

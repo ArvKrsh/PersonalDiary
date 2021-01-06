@@ -59,7 +59,7 @@ export default function NewEntryScreen({ route, navigation }) {
   }
 
   return (
-    <View style={{backgroundColor: "#dfcffa"}}>
+    <View style={{backgroundColor: "#000000"}}>
       <InputScrollView>
         <ModalDatePicker
           button={<Text style={styles.entry_calendar}>{date}</Text>}
@@ -100,8 +100,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "black",
     margin: 20,
-    backgroundColor:'#fcfaff',
-    elevation: 5
+    backgroundColor:'#e3e1e1',
+    elevation: 5,
+    borderRadius: 5
   },
   entry_content: {
     minHeight: windowHeight / 2,
@@ -110,8 +111,9 @@ const styles = StyleSheet.create({
     color: "black",
     textAlignVertical: "top",
     margin: 20,
-    backgroundColor:'#fcfaff',
-    elevation: 5
+    backgroundColor:'#e3e1e1',
+    elevation: 5,
+    borderRadius: 5
   },
   entry_calendar: {
     height: 50,
@@ -119,13 +121,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "black",
     margin: 20,
-    backgroundColor:'#fcfaff',
-    elevation: 5
+    backgroundColor:'#e3e1e1',
+    elevation: 5,
+    borderRadius: 5
   },
   save_btn: {
     margin: 25,
     alignSelf: "center",
-    backgroundColor: "#b992fa",
+    backgroundColor: "#ff0073",
     elevation: 5,
     paddingHorizontal: 50,
     paddingVertical: 14,
